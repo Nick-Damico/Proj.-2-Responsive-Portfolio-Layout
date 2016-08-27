@@ -1,0 +1,376 @@
+/* ================================= 
+  Base Styles
+==================================== */
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: width .2s;
+}
+body {
+    background: #f2f2f2;
+    font: normal 16px/1.6 'Varela Round', sans-serif;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+p {
+    margin-bottom: 1.5em;
+}
+h2, h3, a {
+    color: black;
+}
+h1, h2, h3, p, ul {
+    margin-top: 0;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+
+/* ---- General Styles---- */
+
+.main-header, .title, .proj-title, .proj-descr, .contact-block, .skills-block {
+    text-align: center;
+}
+.main-nav li a:last-child{
+	padding-right: 0;
+}
+.title, .main-nav a, .footer-nav a {
+    text-transform: uppercase;
+}
+.name, .footer-name, .footer-nav ul {
+    margin-bottom: 0;
+}
+.test {
+    border: 2px solid red;
+}
+
+
+
+/* ---- Font Styles---- */
+
+.name {
+    font-size: 1.5em;
+    /* 24px / 16px */
+}
+.about, .proj-descr, .footer-name, .btn-back {
+    font-size: .875em;
+    /* 14px / 16px */
+}
+.proj-title, .title {
+    font-size: 1em;
+    /* 16px / 16px */
+}
+
+
+
+/* ---- Containers ---- */
+
+.container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-header {
+    padding-top: 1em;
+    padding-bottom: 2.5em;
+    padding-left: 1em;
+}
+.main-portfolio {
+    background: #fff;
+}
+.main-portfolio, .contact-block, .skills-block {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+}
+.main-footer {
+    border-top: 1px solid lightgrey;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
+
+/* ---- Header / Nav ---- */
+
+.about {
+    max-width: 75%;
+    margin: 1em auto;
+}
+
+
+
+/* -- Nav -- */
+
+.main-nav {
+    margin-bottom: 3em;
+}
+.main-nav> ul, .footer-nav> ul {
+    padding-left: 0;
+}
+.main-nav li {
+    margin-bottom: .3125em;
+    /* 5px / 16px */
+}
+.main-nav a {
+    background: #fff;
+    padding-top: .625em;
+    /* 10px / 16px */
+    padding-bottom: .625em;
+    /* 10px / 16px */
+    border-radius: 5px;
+}
+.main-nav li, .main-nav a {
+    display: block;
+}
+
+
+
+/* ---- Portfolio ---- */
+
+.title {
+    padding-bottom: 2.5em;
+    /* 40px / 16px */
+    margin-bottom: 0;
+}
+.profile-pic-container {
+    width: 80%;
+}
+.proj-title {
+    padding-top: .5em;
+}
+
+
+
+/* ---- SKILLS ---- */
+
+.skills-block {
+	background: #8f949a;
+}
+.skills-title{
+	color: #fff;
+	margin-bottom: .12em;
+	text-align: left;
+}
+
+.td-avatar {
+border-radius: .5em;
+}
+.skill-pbars {
+	width: 100%;
+	padding-top: 1em;
+}
+.progress-container {
+    width: 100%;
+    height: 1.5em;
+    position: relative;
+    margin-bottom: .5em;
+    background-color: #fafafa;
+}
+.progressbar {
+    height: 100%;
+    position: absolute;
+    line-height: inherit;
+    z-index: 1000;
+}
+.html-bar {
+	width: 60%;
+	background: #3f8abf;
+}
+.css-bar {
+	width: 80%;
+	background: #2a6f9e;
+}
+.js-bar {
+	width: 45%;
+	background: #c25975;
+}
+.design-bar {
+	width: 65%;
+	background: #e59a13;
+}
+
+/* ---- Contact ---- */
+
+
+
+
+/* ---- Footer---- */
+
+.footer-nav {
+    display: none;
+}
+.footer-name {
+    float: left;
+}
+.btn-back {
+    float: right;
+    text-transform: uppercase;
+}
+
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 768px) {
+
+	.container {
+		max-width: 1050px;
+	}
+
+    /* ---- Header ----*/
+    .about {
+        float: left;
+        width: 60%;
+        padding-right: 1em;
+        text-align: left;
+        margin-top: 0;
+    }
+    .profile-container {
+        float: right;
+        width: 40%;
+    }
+    .profile-pic {
+        width: 100%;
+    }
+
+
+
+    /* ---- Header / Nav ----*/
+    .main-nav li {
+        display: inline-block;
+    }
+    .main-nav a {
+        background: initial;
+        padding: .3125em .625em;
+        /* 5px / 16px - 10px /16px */
+    }
+    .main-nav li {
+        margin-right: .5em;
+        /* 8px / 16px */
+    }
+    .main-nav li+ li {
+        margin-left: .5em;
+        /* 8px / 16px */
+    }
+    .main-nav li:last-child {
+        margin-right: 0;
+    }
+
+
+
+    /* ---- Portfolio ---- */
+    .col {
+        float: left;
+        padding-left: 1em;
+        width: calc(100% / 2);
+        height: 23rem;
+    }
+
+
+    /* ---- Skills ----*/
+
+    .avatar-container {
+    	width: 40%;
+    	float: left;
+    }
+    .td-avatar {
+    	border-radius: .5em;
+    }
+    .skills-title {
+    	font-size: .8em;
+    }
+    .skill-pbars {
+    	width: 50%;
+    	float: right;
+    	padding-top: 0;
+    	margin-top:-.3em;
+    }
+
+    /* ---- Contact ----*/
+
+    .contact-block p {
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+    /* ---- Footer----*/
+
+    /* -- Hides Back To Top btn -- */
+    .btn-back {
+        display: none;
+    }
+    /* -- Shows Footer Nav -- */
+    .footer-nav {
+        display: initial;
+    }
+    .footer-nav, .footer-nav ul {
+        float: right;
+    }
+    .footer-nav a {
+        display: block;
+        padding: .25em;
+    }
+    .footer-nav li {
+        display: inline-block;
+        margin-right: .25em;
+    }
+    .footer-nav li+ li {
+        margin-left: .25em;
+    }
+    .footer-nav li:last-child {
+        margin-right: 0;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+	.main-header {
+		padding-top: 2.5em;
+	}
+    .name {
+        float: left;
+    }
+    .main-nav {
+        float: right;
+    }
+    .profile-container {
+        clear: both;
+    }
+    .col {
+        width: calc(100% / 3);
+        height: auto;
+        padding-bottom: 2rem;
+    }
+}
+
+
+
+/* ---- ClearFix ---- */
+
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+
