@@ -27,6 +27,11 @@ h1, h2, h3, p, ul {
 a {
     text-decoration: none;
 }
+a:hover {
+    color: #13527d;
+    text-decoration: underline;
+    transition: all .5s;
+}
 ul {
     list-style: none;
 }
@@ -164,9 +169,14 @@ img {
 	margin-bottom: .12em;
 	text-align: left;
 }
-
+.td-profile-container {
+    width: 50%;
+    margin: 0 auto;
+}
 .td-avatar {
-border-radius: .5em;
+    width: 90%;
+    border-radius: 50%;
+    border: 8px solid lightgreen;
 }
 .skill-pbars {
 	width: 100%;
@@ -229,10 +239,11 @@ border-radius: .5em;
 @media (min-width: 768px) {
 
 	.container {
-		max-width: 1050px;
+		max-width: 1025px;
 	}
 
     /* ---- Header ----*/
+    
     .about {
         float: left;
         width: 60%;
@@ -251,6 +262,7 @@ border-radius: .5em;
 
 
     /* ---- Header / Nav ----*/
+
     .main-nav li {
         display: inline-block;
     }
@@ -274,6 +286,7 @@ border-radius: .5em;
 
 
     /* ---- Portfolio ---- */
+
     .col {
         float: left;
         padding-left: 1em;
@@ -284,21 +297,17 @@ border-radius: .5em;
 
     /* ---- Skills ----*/
 
-    .avatar-container {
-    	width: 40%;
-    	float: left;
-    }
-    .td-avatar {
-    	border-radius: .5em;
+    .td-profile-container {
+        float: left;
+        width: 30%;
     }
     .skills-title {
     	font-size: .8em;
     }
     .skill-pbars {
-    	width: 50%;
+    	width: 60%;
     	float: right;
     	padding-top: 0;
-    	margin-top:-.3em;
     }
 
     /* ---- Contact ----*/
@@ -308,7 +317,6 @@ border-radius: .5em;
         margin-left: auto;
         margin-right: auto;
     }
-
 
 
     /* ---- Footer----*/
@@ -343,6 +351,8 @@ border-radius: .5em;
 
 
 @media (min-width: 1024px) {
+
+	/* ---- Header / Nav ----*/
 	.main-header {
 		padding-top: 2.5em;
 	}
@@ -355,14 +365,26 @@ border-radius: .5em;
     .profile-container {
         clear: both;
     }
+    .about {
+        font-size: 1.2em;
+    }
+
+
+    /* ---- portfolio ----*/
+
     .col {
         width: calc(100% / 3);
         height: auto;
         padding-bottom: 2rem;
     }
+
+
+    /* ---- skills ----*/
+    .skill-pbars {
+        margin-top: 2em;
+    }
+
 }
-
-
 
 /* ---- ClearFix ---- */
 
@@ -373,4 +395,3 @@ border-radius: .5em;
 .cf:after {
     clear: both;
 }
-
