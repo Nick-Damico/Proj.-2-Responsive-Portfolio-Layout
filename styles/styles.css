@@ -9,7 +9,7 @@
 }
 body {
     background: #f2f2f2;
-    font: 300 16px/1.6 'Roboto', sans-serif;
+    font: 400 16px/1.6 'Open Sans', sans-serif;
     color: black;
     padding: 0;
     margin: 0;
@@ -23,8 +23,8 @@ h2, h3, a {
 h1, h2, h3, p, ul {
     margin-top: 0;
 }
-h1, h2, h3, .title, .name, .footer-links {
-    font-style: 'Raleway', sans-serif;
+.title, .name, .proj-title, .skills-title {
+    font-family: 'Raleway', sans-serif;
 }
 a {
     font-weight: 400;
@@ -32,7 +32,9 @@ a {
 }
 a:hover,
 a:active {
+    font-weight: 600;
     color: #f2f2f2;
+    transition: font-weight .5s;
 }
 .main-nav a:hover {
     background: #000;
@@ -101,7 +103,7 @@ img {
     background: linear-gradient( rgba(242,242,242,0.9), rgba(242,242,242,.9)), url('../img/bg-2.jpg') no-repeat center;
     background-attachment: fixed;
     background-size: cover;
-    padding: 1em 1em 2.5em;
+    padding: 1em 0 2.5em;
 }
 .main-portfolio {
     background: #fff;
@@ -163,7 +165,7 @@ img {
 }
 .profile-pic {
     border-radius: 50%;
-    width: 15em;
+    width: 12em;
 }
 .proj-title {
     padding-top: .5em;
@@ -252,7 +254,8 @@ img {
   Media Queries
 ==================================== */
 
-@media (min-width: 768px) {
+@media (min-width: 768px),
+       (min-width: 600px) and (orientation: landscape) {
 
 	.container {
 		max-width: 1025px;
@@ -316,10 +319,12 @@ img {
 
     .col {
         float: left;
-        padding-left: 1em;
+        padding-right: 1em;
         width: calc(100% / 2);
         height: 24em;
     }
+
+    
 
 
     /* ---- Skills ----*/
@@ -375,10 +380,25 @@ img {
     }
 }
 
+/*-- isolates CSS rule from conflicts --*/
+    @media (min-width: 600px) and (max-width:1023px) {
+        .col + .col:nth-child(2n){
+        padding-left: 1em;
+        padding-right: 0;
+    }
+
+       }
 
 
 @media (min-width: 1024px) {
 
+    /* Sets Height of all portfolio image pics
+    gutter padding causes middle row of images to 
+    shrink on three column layout. adding in height
+    for images fixes the issue. */
+    .main-portfolio img {
+        height: 183px;
+    }   
 	/* ---- Header / Nav ----*/
 	.main-header {
 		padding-top: 2.5em;
@@ -392,9 +412,6 @@ img {
     .profile-container {
         clear: both;
     }
-    .profile-pic {
-        border: .5px solid black;
-    }
     .about {
         font-size: 1.2em;
     }
@@ -406,6 +423,25 @@ img {
         width: calc(100% / 3);
         padding-bottom: 2rem;
         height: 22rem;
+    }
+
+    /*-- Adjust gutters for 3 column layout --*/
+
+    /*-- column One --*/
+    .col:nth-child(3n + 1){
+        padding-right: 1em;
+        padding-left: 0em;
+    }
+    /*-- column two --*/
+    .col:nth-child(3n + 2){
+        padding-left: 1em;
+        padding-right: 1em;
+    } 
+
+    /*-- column three --*/
+    .col + .col:nth-child(3n){
+        padding-right: 0em;
+        padding-left: 1em;
     }
 
 
